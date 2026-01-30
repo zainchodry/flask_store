@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block title %}Profile - Flask Store{% endblock %}
+{% block content %}
+<h1>Profile</h1>
+<form method="post">
+  {{ form.hidden_tag() }}
+  <div>{{ form.full_name.label }}<br />{{ form.full_name() }}</div>
+  <div>{{ form.address.label }}<br />{{ form.address() }}</div>
+  <div>{{ form.phone.label }}<br />{{ form.phone() }}</div>
+  <div>{{ form.submit() }}</div>
+</form>
+{% endblock %}

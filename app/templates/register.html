@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block title %}Register - Flask Store{% endblock %}
+{% block content %}
+<h1>Register</h1>
+<form method="post">
+  {{ form.hidden_tag() }}
+  <div>{{ form.username.label }}<br />{{ form.username() }}</div>
+  <div>{{ form.email.label }}<br />{{ form.email() }}</div>
+  <div>{{ form.password.label }}<br />{{ form.password() }}</div>
+  <div>
+    {{ form.confirm_password.label }}<br />{{ form.confirm_password() }}
+  </div>
+  <div>{{ form.role.label }}<br />{{ form.role() }}</div>
+  <div>{{ form.submit() }}</div>
+  <br>
+    <p>Already have an account? <a href="{{ url_for('auth.login') }}" class="btn btn-outline-info">Login here</a>.</p>
+</form>
+{% endblock %}

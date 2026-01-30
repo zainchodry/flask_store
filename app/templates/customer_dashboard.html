@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block title %}My Dashboard - Flask Store{% endblock
+%} {% block content %}
+<h1>Customer Dashboard</h1>
+<p>Welcome, {{ current_user.username }}. View your orders and account info.</p>
+<ul>
+  <li><a href="{{ url_for('orders.list_orders') }}">My Orders</a></li>
+  <li><a href="{{ url_for('auth.profile') }}">Edit Profile</a></li>
+</ul>
+{% endblock %}

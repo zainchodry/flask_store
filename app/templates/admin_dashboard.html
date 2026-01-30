@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block title %}Admin Dashboard - Flask Store{%
+endblock %} {% block content %}
+<h1>Admin Dashboard</h1>
+<p>Welcome, administrator. Manage users, products, and analytics here.</p>
+<ul>
+  <li><a href="{{ url_for('analytics.index') }}">Analytics</a></li>
+  <li><a href="{{ url_for('products.list_products') }}">View Products</a></li>
+</ul>
+{% endblock %}
