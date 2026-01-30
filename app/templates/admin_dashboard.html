@@ -1,9 +1,69 @@
-{% extends 'base.html' %} {% block title %}Admin Dashboard - Flask Store{%
-endblock %} {% block content %}
-<h1>Admin Dashboard</h1>
-<p>Welcome, administrator. Manage users, products, and analytics here.</p>
-<ul>
-  <li><a href="{{ url_for('analytics.index') }}">Analytics</a></li>
-  <li><a href="{{ url_for('products.list_products') }}">View Products</a></li>
-</ul>
+{% extends 'base.html' %}
+{% block title %}Admin Dashboard - Flask Store{% endblock %}
+
+{% block content %}
+
+<style>
+  body {
+    background: linear-gradient(120deg, #141e30, #243b55);
+    font-family: Arial, sans-serif;
+  }
+
+  .admin-card {
+    max-width: 700px;
+    margin: 80px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    text-align: center;
+  }
+
+  .admin-card h1 {
+    margin-bottom: 15px;
+    color: #222;
+  }
+
+  .admin-card p {
+    margin-bottom: 25px;
+    color: #555;
+    font-size: 16px;
+  }
+
+  .admin-menu {
+    list-style: none;
+    padding: 0;
+  }
+
+  .admin-menu li {
+    margin: 12px 0;
+  }
+
+  .admin-menu a {
+    display: block;
+    padding: 12px;
+    background: #243b55;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .admin-menu a:hover {
+    background: #141e30;
+    transform: translateY(-2px);
+  }
+</style>
+
+<div class="admin-card">
+  <h1>Admin Dashboard</h1>
+  <p>Welcome, administrator. Manage users, products, and analytics here.</p>
+
+  <ul class="admin-menu">
+    <li><a href="{{ url_for('analytics.index') }}">📊 Analytics</a></li>
+    <li><a href="{{ url_for('products.list_products') }}">📦 View Products</a></li>
+  </ul>
+</div>
+
 {% endblock %}

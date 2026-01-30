@@ -1,5 +1,38 @@
-{% extends 'base.html' %} {% block title %}Analytics - Flask Store{% endblock %}
+{% extends 'base.html' %}
+{% block title %}Analytics - Flask Store{% endblock %}
+
 {% block content %}
-<h1>Analytics</h1>
-<p>Simple analytics placeholder for admins.</p>
+
+<style>
+  body {
+    background: linear-gradient(120deg, #232526, #414345);
+    font-family: Arial, sans-serif;
+  }
+
+  .analytics-card {
+    max-width: 700px;
+    margin: 100px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    text-align: center;
+  }
+
+  .analytics-card h1 {
+    margin-bottom: 15px;
+    color: #222;
+  }
+
+  .analytics-card p {
+    color: #555;
+    font-size: 16px;
+  }
+</style>
+
+<div class="analytics-card">
+  <h1>Analytics</h1>
+  <p>Simple analytics placeholder for admins.</p>
+</div>
+
 {% endblock %}

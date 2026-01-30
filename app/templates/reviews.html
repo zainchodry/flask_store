@@ -1,5 +1,59 @@
-{% extends 'base.html' %} {% block title %}Reviews - Flask Store{% endblock %}
+{% extends 'base.html' %}
+{% block title %}Reviews - Flask Store{% endblock %}
+
 {% block content %}
-<h1>Reviews</h1>
-<p>Reviews placeholder.</p>
+
+<style>
+  body {
+    background: linear-gradient(120deg, #ff512f, #dd2476);
+    font-family: Arial, sans-serif;
+  }
+
+  .reviews-card {
+    max-width: 700px;
+    margin: 100px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .reviews-card h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #222;
+  }
+
+  .reviews-card p {
+    color: #555;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .review-item {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+  }
+
+  .review-item:last-child {
+    border-bottom: none;
+  }
+
+  .review-item h4 {
+    margin: 0 0 5px 0;
+    color: #333;
+  }
+
+  .review-item p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+  }
+</style>
+
+<div class="reviews-card">
+  <h1>Reviews</h1>
+  <p>Reviews placeholder.</p>
+</div>
+
 {% endblock %}

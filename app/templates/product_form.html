@@ -1,11 +1,84 @@
-{% extends 'base.html' %} {% block title %}Add Product - Flask Store{% endblock
-%} {% block content %}
-<h1>Add Product</h1>
-<form method="post">
-  {{ form.hidden_tag() }}
-  <div>{{ form.name.label }}<br />{{ form.name() }}</div>
-  <div>{{ form.description.label }}<br />{{ form.description() }}</div>
-  <div>{{ form.price.label }}<br />{{ form.price() }}</div>
-  <div>{{ form.submit() }}</div>
-</form>
+{% extends 'base.html' %}
+{% block title %}Add Product - Flask Store{% endblock %}
+
+{% block content %}
+
+<style>
+  body {
+    background: linear-gradient(120deg, #f7971e, #ffd200);
+    font-family: Arial, sans-serif;
+  }
+
+  .product-card {
+    max-width: 500px;
+    margin: 90px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .product-card h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #222;
+  }
+
+  .product-card div {
+    margin-bottom: 15px;
+  }
+
+  .product-card label {
+    font-weight: bold;
+    color: #555;
+  }
+
+  .product-card input,
+  .product-card textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 6px;
+    font-size: 14px;
+  }
+
+  .product-card input:focus,
+  .product-card textarea:focus {
+    outline: none;
+    border-color: #f7971e;
+    box-shadow: 0 0 6px rgba(247, 151, 30, 0.5);
+  }
+
+  .product-card input[type="submit"] {
+    background: #f7971e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 6px;
+    width: 100%;
+    transition: 0.3s;
+  }
+
+  .product-card input[type="submit"]:hover {
+    background: #ffd200;
+    color: #222;
+  }
+</style>
+
+<div class="product-card">
+  <h1>Add Product</h1>
+  <form method="post">
+    {{ form.hidden_tag() }}
+
+    <div>{{ form.name.label }}<br />{{ form.name() }}</div>
+    <div>{{ form.description.label }}<br />{{ form.description() }}</div>
+    <div>{{ form.price.label }}<br />{{ form.price() }}</div>
+
+    <div>{{ form.submit() }}</div>
+  </form>
+</div>
+
 {% endblock %}

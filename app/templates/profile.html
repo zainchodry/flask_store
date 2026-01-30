@@ -1,11 +1,88 @@
-{% extends 'base.html' %} {% block title %}Profile - Flask Store{% endblock %}
+{% extends 'base.html' %}
+{% block title %}Profile - Flask Store{% endblock %}
+
 {% block content %}
-<h1>Profile</h1>
-<form method="post">
-  {{ form.hidden_tag() }}
-  <div>{{ form.full_name.label }}<br />{{ form.full_name() }}</div>
-  <div>{{ form.address.label }}<br />{{ form.address() }}</div>
-  <div>{{ form.phone.label }}<br />{{ form.phone() }}</div>
-  <div>{{ form.submit() }}</div>
-</form>
+
+<style>
+  body {
+    background: linear-gradient(120deg, #11998e, #38ef7d);
+    font-family: Arial, sans-serif;
+  }
+
+  .profile-card {
+    max-width: 420px;
+    margin: 90px auto;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  }
+
+  .profile-card h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+  }
+
+  .profile-card div {
+    margin-bottom: 15px;
+  }
+
+  .profile-card label {
+    font-weight: bold;
+    color: #555;
+  }
+
+  .profile-card input,
+  .profile-card textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 6px;
+    font-size: 14px;
+  }
+
+  .profile-card input:focus,
+  .profile-card textarea:focus {
+    outline: none;
+    border-color: #11998e;
+    box-shadow: 0 0 6px rgba(17, 153, 142, 0.5);
+  }
+
+  .profile-card input[type="submit"] {
+    background: #11998e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 6px;
+    transition: 0.3s;
+  }
+
+  .profile-card input[type="submit"]:hover {
+    background: #38ef7d;
+    color: #333;
+  }
+
+  .profile-card p {
+    text-align: center;
+    margin-top: 10px;
+  }
+</style>
+
+<div class="profile-card">
+  <h1>Profile</h1>
+  <form method="post">
+    {{ form.hidden_tag() }}
+
+    <div>{{ form.bio.label }}<br />{{ form.bio() }}</div>
+    <div>{{ form.address.label }}<br />{{ form.address() }}</div>
+    <div>{{ form.phone.label }}<br />{{ form.phone() }}</div>
+
+    <div>{{ form.submit() }}</div>
+  </form>
+</div>
+
 {% endblock %}

@@ -1,5 +1,38 @@
-{% extends 'base.html' %} {% block title %}Orders - Flask Store{% endblock %} {%
-block content %}
-<h1>Orders</h1>
-<p>Orders listing placeholder.</p>
+{% extends 'base.html' %}
+{% block title %}Orders - Flask Store{% endblock %}
+
+{% block content %}
+
+<style>
+  body {
+    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+    font-family: Arial, sans-serif;
+  }
+
+  .orders-card {
+    max-width: 700px;
+    margin: 100px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    text-align: center;
+  }
+
+  .orders-card h1 {
+    margin-bottom: 15px;
+    color: #222;
+  }
+
+  .orders-card p {
+    color: #555;
+    font-size: 16px;
+  }
+</style>
+
+<div class="orders-card">
+  <h1>Orders</h1>
+  <p>Orders listing placeholder.</p>
+</div>
+
 {% endblock %}

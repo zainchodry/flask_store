@@ -1,5 +1,56 @@
-{% extends 'base.html' %} {% block title %}Unauthorized - Flask Store{% endblock
-%} {% block content %}
-<h1>Unauthorized</h1>
-<p>You do not have permission to view this page.</p>
+{% extends 'base.html' %}
+{% block title %}Unauthorized - Flask Store{% endblock %}
+
+{% block content %}
+
+<style>
+  body {
+    background: linear-gradient(120deg, #ff4e50, #f9d423);
+    font-family: Arial, sans-serif;
+  }
+
+  .unauthorized-card {
+    max-width: 600px;
+    margin: 120px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+
+  .unauthorized-card h1 {
+    margin-bottom: 20px;
+    color: #e74c3c;
+    font-size: 36px;
+  }
+
+  .unauthorized-card p {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+
+  .unauthorized-card a {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #e74c3c;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .unauthorized-card a:hover {
+    background: #ff6f61;
+  }
+</style>
+
+<div class="unauthorized-card">
+  <h1>Unauthorized</h1>
+  <p>You do not have permission to view this page.</p>
+  <a href="{{ url_for('auth.login') }}">Go to Login</a>
+</div>
+
 {% endblock %}

@@ -1,9 +1,69 @@
-{% extends 'base.html' %} {% block title %}My Dashboard - Flask Store{% endblock
-%} {% block content %}
-<h1>Customer Dashboard</h1>
-<p>Welcome, {{ current_user.username }}. View your orders and account info.</p>
-<ul>
-  <li><a href="{{ url_for('orders.list_orders') }}">My Orders</a></li>
-  <li><a href="{{ url_for('auth.profile') }}">Edit Profile</a></li>
-</ul>
+{% extends 'base.html' %}
+{% block title %}My Dashboard - Flask Store{% endblock %}
+
+{% block content %}
+
+<style>
+  body {
+    background: linear-gradient(120deg, #ff9966, #ff5e62);
+    font-family: Arial, sans-serif;
+  }
+
+  .customer-card {
+    max-width: 600px;
+    margin: 90px auto;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+
+  .customer-card h1 {
+    margin-bottom: 15px;
+    color: #222;
+  }
+
+  .customer-card p {
+    margin-bottom: 25px;
+    color: #555;
+    font-size: 16px;
+  }
+
+  .customer-menu {
+    list-style: none;
+    padding: 0;
+  }
+
+  .customer-menu li {
+    margin: 12px 0;
+  }
+
+  .customer-menu a {
+    display: block;
+    padding: 12px;
+    background: #ff5e62;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .customer-menu a:hover {
+    background: #ff9966;
+    transform: translateY(-2px);
+  }
+</style>
+
+<div class="customer-card">
+  <h1>Customer Dashboard</h1>
+  <p>Welcome, {{ current_user.username }}. View your orders and account info.</p>
+
+  <ul class="customer-menu">
+    <li><a href="{{ url_for('orders.list_orders') }}">🛒 My Orders</a></li>
+    <li><a href="{{ url_for('auth.profile') }}">👤 Edit Profile</a></li>
+  </ul>
+</div>
+
 {% endblock %}
